@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Using Dynamic CSS</title>
+
+	<script>
+	
+		function init() {
+			document.getElementById("changeStyles").onclick = changeStyles;
+		}
+		window.onload = init;
+		
+		function changeStyles()
+		{
+			document.getElementById("thePgph").style.backgroundColor = "orange";
+			document.getElementById("thePgph").style.fontFamily = "'Trebuchet MS', Helvetica, sans-serif";
+			document.getElementById("thePgph").style.fontStyle = "bold";
+			document.getElementById("thePgph").style.textAlign = "center";
+			document.getElementById("thePgph").style.textShadow = "1px 1px";
+			document.getElementById("changeStyles").style.width = "1%";
+			// add additional style commands here
+			// you may also add more XHTML elements to the body,
+			// or create multiple buttons.  You may also 
+			// use if-statements to check the current value of
+			// style properties if you wanted to create a "toggle"
+			// effect, etc.
+
+		}
+	
+	</script>
+	
+</head>
+<body>
+	
+	<p id="thePgph">This is a sample paragraph.  It was setup with normal text
+	on a normal background.  But when we click the button below,
+	JavaScript is going to change its appearance dynamically.</p>
+	
+	<input type="button" id="changeStyles" value=" Click Me " />
+	
+</body>
+</html>

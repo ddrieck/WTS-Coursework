@@ -1,0 +1,174 @@
+ 
+<html> 
+<head> 
+	<title>Line Graph Application</title> 
+ 
+	<style type="text/css"> 
+ 
+		DIV.graphBar {	
+			color:black;
+			font-size:smaller;
+			font-weight:bold;
+			text-align:right;
+			padding-top:5px;
+			padding-right:10px;
+			margin-top:2px;
+			margin-bottom:15px;
+		}
+		
+		DIV.totals {
+			border-top:1px solid black;
+			font-style:italic;
+		}
+ 
+		FIELDSET {
+			width:75%;
+			background:#eeeeee;
+			margin-bottom:25px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		
+		LEGEND {
+			font-weight:bold;
+			color:darkgreen;
+			font-size:125%;
+		}
+		
+		SPAN {
+			color:purple;
+			font-size:90%;
+			font-family:arial, helvetica;
+		}
+		
+	</style> 
+ 
+	<script type="text/javascript"> 
+ 
+		//Global Enumerative Constants
+		var LEGEND = 0;
+		var ITEMNAME = 1;
+		var DATA = 2;
+		var COLORS = 3;
+	
+		var chart = new Array();
+		
+		chart[0] = new Array();
+		chart[0][LEGEND] = "Widget Production";
+		chart[0][ITEMNAME] = new Array("Big Widgets", "Little Widgets", "Medium Widgets", "Microwidgets");
+		chart[0][DATA] = new Array(30,50,100,25);
+		chart[0][COLORS] = new Array("lightblue","orange","red","lightgreen");
+	
+		chart[1] = new Array();
+		chart[1][LEGEND] = "Ice Cream Consumption (in annual Scoops Eaten)";
+		chart[1][ITEMNAME] = new Array("Chocolate", "Strawberry", "Vanilla", "Mint", "Sorbet");
+		chart[1][DATA] = new Array(12,15,8,20,4);
+		chart[1][COLORS] = new Array("tan", "pink", "#FFFFDD", "#CCFFCC", "orange");
+ 
+		chart[2] = new Array();
+		chart[2][LEGEND] = "Muppet Airtime in 2009 (in hours)";
+		chart[2][ITEMNAME] = new Array("Gonzo", "Kermit", "Piggy", "Rowlf", "Big Bird", "Elmo");
+		chart[2][DATA] = new Array(100,350,300,80,600,900);
+		chart[2][COLORS] = new Array("#FF00FF", "lightgreen", "pink", "tan", "yellow", "red");
+	
+		function drawChart(chartNum)
+		{
+			
+			var drawHTML = '';
+			drawHTML += '<fieldset>';
+			
+			drawHTML += '<legend>' + chart[chartNum][LEGEND] + '</legend>';
+			
+			for (var i = 0; i < chart[chartNum][DATA].length; i++){
+				//Take the values in all the arrays and add them to duplicate arrays
+				//Organize those arrays by alphabetical order of ITEMNAME
+
+				//The percentCalc variable takes the data in the DATA array and adds it all together
+				//With that total it divides it by the current DATA array value times it by 100 to get percentage
+				var arrayTotal = 0;
+				//For loop to get us the total of all array elements added together
+				for (j = 0; j < chart[chartNum][DATA].length; j++) {
+					arrayTotal += chart[chartNum][DATA][j];
+					};
+				//calculate percentage with the result of the for loop
+				var percentage = (((chart[chartNum][DATA][i])/arrayTotal)*100);
+				//round the percentage to the appropriate format, no decimals
+				percentage = percentage.toPrecision(2);
+		
+				//for loop to generate the bar graph widths	
+				for (j = 0; j < chart[chartNum][DATA].length; j++){
+					//generate new array to run sorting on
+					var dataArray = chart[chartNum][DATA].slice(0);
+					//find the largest number in array and set it to maxData 
+					var maxData = Math.max.apply(Math, dataArray)
+					//if number is the maxData then set it to 95
+					//otherwise make the data value proportional to 95%
+					if (dataArray[i] == maxData){
+						var pctwidth = 95; } else {
+						pctwidth = ((95 / maxData) * dataArray[i]); }
+					}
+					
+					//console.log ("dataArray is equal to " + dataArray[i] + " and maxData is " + maxData);
+					//console.log (pctwidth);
+
+				var clrcode = chart[chartNum][COLORS][i];
+				//console.log (clrcode);
+				
+				var txtabove = chart[chartNum][ITEMNAME][i];
+				//console.log (txtabove)
+		
+				//Calculate the text inside. This needs to be in the format of array number and percentage
+				//Set the percentCalc variable to equal percentage
+				var percentCalc = percentage;
+				
+				//print out number located in array and the result of the percentCalc variable
+				var txtinside = chart[chartNum][DATA][i] + " " + "(" + percentCalc + "%)";
+					//console.log ("The percentage is " + chart[chartNum][DATA][i] + " divided by " + arrayTotal + " times 100");
+					//console.log (percentage);
+					//console.log (txtinside);		
+				
+				drawHTML += barGraph(pctwidth, clrcode, txtabove, txtinside);
+				};
+			
+			drawHTML += '<div class="totals">Combined Total: ' + arrayTotal + '</div>'; 
+			drawHTML += '</fieldset>';
+			drawHTML += '<br />';
+			
+			return drawHTML
+				
+		}
+ 
+		function barGraph(pctwidth, clrcode, txtabove, txtinside)
+		{
+			//console.log(pctwidth, clrcode, txtabove, txtinside);
+			var drawBars = '';
+					drawBars += '<span>' + txtabove + ':<br /></span>';
+					drawBars += '<div class="graphBar" style="width:' + pctwidth + '%;height:25px;background:' + clrcode + '">';
+					drawBars +=	txtinside;
+					drawBars += '</div>';
+				return drawBars;
+		}
+	
+	</script> 
+ 
+</head> 
+ 
+<body> 
+ 
+<!-- you may NOT add any additional HTML to the body! --> 
+ 
+<script type="text/javascript"> 
+ 
+	for (i in chart)
+	{
+		document.write(drawChart(i));
+		//console.log(drawChart(i));
+	}
+ 
+</script> 
+ 
+ 
+</body> 
+ 
+</html> 
+ 

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Fetch Photographers with JQuery</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+function trigger() {
+$("div#photographers").load("fetch-photographers.php?name=" + $("input").val() );
+};
+</script>
+</head>
+<body>
+<form method="get" name="photographersearch" action="javascript:trigger()">
+Search for photographer:<input type="text" name="name">
+<input type="submit" value="Search">
+</form>
+
+Here are your photographers:
+<div id="photographers"></div>
+
+</body>
+</html> 

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title> Part 1 Answers </title>
+</head>
+<body>
+<center><h1> Part 1 Answers </h1></center>
+<br>
+<ol>
+<li>What event should you almost always use to handle form submissions and why? </li>
+<p>	You should almost always use the submit event handler as it is able to process submit requests from the user either clicking the submit button or pressing Enter/Return.</p>
+<li>Why should you always use a submit button (or image)?  </li>
+<p>	You should always use a submit button so that users without Javascript are still able to submit your form.</p>
+<li>What property do you use to fetch or set the value of a text input or textarea? On what other elements does that same property work for retrieving and setting values? </li>
+<p>You can use the value property of the getElementByID object in order to fetch the value. To set a new value it's a simple matters of assigning a new value using =. This property also works for hidden and password fields, select menus (though setting values requires a workaround), and finding the state of checkboxes.</p>
+<li>How do you create linked select menus? </li>
+<p>To create linked select menus you would assign a change event on the initial menu items. Once triggered it would call the appropriate options by looping through an options array and display those options on the second list.</p>
+<li>How do you confirm that a checkbox was checked?</li>
+<p>You can confirm a checkbox state by using the checked property. This property will either display as <em>true</em> (checked) or <em>false</em> (not checked).</p>
+<li>What code is required to find out which radio button was checked?</li>
+<p>In order to find out which radio button was checked you would once again use the checked property. However you are not able to simply grab the reference for a specific button. Instead you have loop through all radio buttons in a group and find out which button was actually checked.</p>
+<li>What JavaScript functions can be used to test a regular expression?</li>
+<p>	The JavaScript functions that test regular expressions are <em>test(), search(), exec(),</em> and <em>match(). Test()</em> returns either true or false if a match was made. Search() gives the indexed position of the first match. <em>Exec()</em> returns the actual match value that made test return true. Finally, <em>match()</em> provides much the same functionality as <em>exec()</em>, but handings regex groupings differently.</p>
+<li>How do you match a literal character or string of characters?</li>
+<p>	To match a literal character it is simply a matter of writing out the characters exactly as you want them to be found. </p>
+<li>What are meta-characters? How do you escape a meta-character?</li>
+<p>	Meta-characters are characters that have special properties besides their literal values. These are normally symbols that indicate where to look for matches in a string. You can escape meta-characters by using the backslash (\) character.</p>
+<li> What meta-character do you use to bind a pattern to the beginning of a string? To the end?</li>
+<p>	To bind a pattern to the beginning of a string you would use the carot (^) at the front of your pattern. For the end you would use the dollar sign ($) at the end.</p>
+<li> How do you create subpatterns (aka groupings)?  </li>
+<p>In order to create groupings it is simply a matter of enclosing your pattern match with parentheses, which are also a meta-character.</p>
+<li>What are the quantifiers? How do you require 0 or 1 of a character or string? 0 or more? 1 or more? Precisely X occurrences? A range of occurrences? A minimum of occurrences?  </li>
+<p>	Qualifiers are special meta-characters that allow you to match multiple occurrences of your pattern. To get 0 or 1 matches you would use the question mark (?) character at the end of the pattern. For 0 or more you would use the asterisk (*), and for 1 or more you would the plus symbol (+). To match a specific number of occurrences you would use the curly brackets  ({}) with a number indicating the amount of occurrences you wish to match. For a range you would place a comma between two values in curly brackets ({min,max}). The first number is the minimum number, the second number is the maximum. These range of values are inclusive and can match any number in its range. Finally to match a minimum number you would simple write the minimum in the curly brackets, followed by a comma ({min,}). </p>
+<li>What are character classes? </li>
+<p>Character classes are shorthand references to commonly searched patterns. These include things like all words characters, any digits, or not a digit.</p>
+<li>What meta-characters still have meaning within character classes? </li>
+<p>Four meta-characters still have meaning within character classes. The backslash (\) is still escape. The dash (-) is treated as a range when it is within two characters. The closing bracket (]) is still used to terminate the class. The caret (^), while still a meta-character, has a different value and negates the characters of the class when used as the initial character.</p>
+<li>What shortcut represents the “any digit” character class? The “any white space” class? “Any word”? What shortcuts represent the opposite of these?</li>
+<p>The shorthand for any digit is \d. Any white space class is represented by \s. Any word with \w. The opposite of these are the classes letters capitalized. Therefore you would use \D, \S, and \W for negation classes.</p>
+</ol>

@@ -1,0 +1,48 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+
+	// arrays of book data.  the first book is represented by the
+	// first element within each array, the second book by the second
+	// element within each array, etc.  
+
+	var title = ["Barbecuing in the Rain","Picnicing in the Arctic",
+		"How to Saute on a Radiator", "A Real Grasshopper: Bartending with Insects",
+		"Food with a Bullet:  Cooking in Camden", "Mirepoix for Dummies"];
+	var price = [18.50, 23.95, 41.95, 5.95, 13.00, 99.00];
+	var binding = ["Hardcover", "Paperback", "Hardcover", "Paperback", "Paperback", "Hardcover"];
+	var pubYear = [2002, 1975, 2004, 2006, 2001, 1997];
+	var NYTBestSeller = [true, true, false, false, true, true]
+	var seriesTitle = ["Food Network", "The Food Network", 
+		"Culinary Shortcuts", "Sunset Libations", 
+		"Food Network", "The Food Network"];
+		
+	for (i=0; i<title.length; i++)
+	{
+		if ((((price[i] < 25)&&(binding[i] == "Hardcover")) || ((price[i] < 15)&&(binding[i] == "Paperback"))) && (pubYear[i] > 2000) && (NYTBestSeller[i] === true) && ((seriesTitle[i] == "Food Network") || (seriesTitle[i] == "The Food Network"))){
+		
+			document.write("<hr />");
+			document.write("TITLE: ", title[i], "<br />");
+			document.write("PRICE:  $", price[i], "<br />");
+			document.write("BINDING: ", binding[i], "<br />");
+			document.write("PUB YR: ", pubYear[i], "<br />");
+			document.write("BESTSELLER: ", NYTBestSeller[i], "<br />");
+			document.write("SERIES: ", seriesTitle[i], "<br />");
+			document.write("<strong> Food Network Hot Selling Bargain Book </strong> <br />");
+			} else {
+			document.write("<hr />");
+			document.write("TITLE: ", title[i], "<br />");
+			document.write("PRICE:  $", price[i], "<br />");
+			document.write("BINDING: ", binding[i], "<br />");
+			document.write("PUB YR: ", pubYear[i], "<br />");
+			document.write("BESTSELLER: ", NYTBestSeller[i], "<br />");
+			document.write("SERIES: ", seriesTitle[i], "<br />");
+			};
+	};
+	
+		
+</script>
+</body>
+</html>

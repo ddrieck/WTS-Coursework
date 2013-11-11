@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Rotating Images and Captions</title>
+
+	<script type="text/javascript">
+	
+	var myImages = [	["photos/soundersallin.jpg",
+						 "Sounders FC vs Portland Timbers - Tonight We Go All In"] ,
+						 ["photos/vermonthills.jpg" ,
+						  "Vermont Hillsides in the Fall" ] ,
+						 ["photos/moo.jpg" ,
+						  "Moo? Moo!" ] ,
+						 ["photos/sheep.jpg" ,
+						  "The Sheep of Vermont" ] ,
+						 ["photos/arnold.jpg" ,
+						  "Arnold Arboretum, Boston, MA" ] ,
+						 ["photos/seattlegarden.jpg" ,
+						  "Seattle Fall Garden" ] ];
+					
+	
+	
+	var imageNum = -1;
+	
+	window.onload = startPage;
+	
+	function startPage() {
+	
+	
+		// preLoad all of the images to the cache 
+		// by updating the array element to be an 
+		// actual Image object instance
+		var imgURL;
+		for (i in myImages) { 
+			imgURL = myImages[i][0];
+			myImages[i][0] = new Image; 
+			myImages[i][0].src=imgURL; 
+		}
+	
+		// tell the browser to call the advanceImage() function
+		// now and then every 2500 milliseconds (2.5 sec) after
+		advanceImage();
+		window.setInterval("advanceImage()", 2500);
+
+	}
+	
+	function advanceImage() {
+			
+			imageNum = (++imageNum)%(myImages.length);
+			document.getElementById("imageobj").src = myImages[imageNum][0].src;
+			document.getElementById("caption").innerHTML = myImages[imageNum][1];
+			
+	}
+	
+	</script>
+	
+</head>
+<body>
+
+<div id="caption"></div>
+<img id="imageobj" alt="" />
+
+</body>
+</html>

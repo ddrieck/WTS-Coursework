@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Fibonacci Calculator</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- part2.html -->
+    <form action="" method="post" id="theForm">
+        <fieldset>
+            <div><label for="lowerLimit">Please give a lower limit.</label><input type="text" name="lowerLimit" id="lowerLimit" required></div>
+            <div><label for="upperLimit">Please give an upper limit</label><input type="text" name="upperLimit" id="upperLimit" required></div>
+			<div><label for="result">Your number sequence</label><textarea name="result" id="result"></textarea></div>
+            <div><input type="submit" value="Calculate" id="submit"></div>
+        </fieldset>
+    </form>
+    <script src="js/fibonacci.js"></script>
+</body>
+</html>

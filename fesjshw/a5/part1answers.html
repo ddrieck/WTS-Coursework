@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<title> Part 1 Answers </title>
+</head>
+<body>
+<center><h1> Part 1 Answers </h1></center>
+<br>
+<ol>
+<li>What is the syntax for defining your own functions? How do you write a function that takes arguments?</li>
+<p>The basic syntax of a function is <br />
+<em>functionName()</em> {<br /><em>statement</em> }<br />
+To write a function that takes arguments you simply add variables between the parentheses. Such as: <br />
+<em>functionName(<strong>arguments</strong>)</em> {<br /><em>statement</em> }<br /> 
+Multiple arguments are separated by commas.</p>
+<li>How can you validate the number and types of arguments passed to a function, and why is that necessary?</li>
+<p>Because Javascript is weakly typed it can pass on any type and number into the arguments of a function. To validate numbers you can use the typeof operator to check if the type passed is indeed a number. The code would look like <em> if (typeof <strong>argument</strong> == 'number') </em>. Similarly to check for the correct number of arguments you would use the arguments variable with the length property. For example if a function had 2 arguments you would run a validation check using <em>if (arguments.length == 2)</em>.</p>
+<li>How do you establish a default parameter value?</li>
+<p>Technically there is no way to directly set default parameter values. You can mimic the behavior however, by using the fact that any parameters that don't have values passed to them have a variable of undefined. Using an if statement you can search the parameters for an undefined variable and set that variable to a default value. The code would look like: <br /><em> if (typeof variable == 'undefined') { <br /> variable = <strong>'default value'</strong>;<br />}</em></p>
+<li>What does it mean to say that an argument is passed by value or by reference? Which value types are passed in each way?</li>
+<p>Simple values, such as numbers, strings, and Booleans, are passed as values. That means that the variables themselves aren't passed on to the function. Rather it is the value of that variable that is passed on. Concurrently, complex value types, such as objects and arrays, are passed on by reference. That means that only a reference to the variable is passed, and as a result any changes to that variable done within the function will affect the original variable, outside the function.</p>
+<li>How does a function return a value?</li>
+<p>A function returns a value using the <em>return</em> statement. This can return any value type, and can be a literal value or a variable. </p>
+<li>What is variable scope? What is global scope? What is local scope? Why should you avoid creating global variables?</li>
+<p>Variable scope indicates where a variable exists and where it is available in the script. The global scope is available to the entire script, outside of any functions. A local scope variable is one that is created within a function, and as such can only be called within that function. These variables can be created as part of the function's parameters, or within the function itself.<br />
+Avoiding the creation of global variables is important for several reasons. First, global variables can interact with other global variables, including ones not explicitly written in your script, causing conflicts. Secondly, since global variables can be accessed by any variable, there is a likelihood that one function could change the value of that variable, affecting other functions who might use it. Finally, using global variables can have an affect on the performance of your script as each global variable needs to be retained in memory.</p>
+<li>What does it mean that functions in JavaScript are “first-class”?</li>
+<p>Javascript functions being "first-class" mean that can be used and manipulated like any other type. The reason this is possible is because functions in Javascript are also objects.</p>
+<li>What is the second (i.e., expression) syntax for defining a function?</li>
+<p>The second syntax for defining a function is <br /><em> var <strong>variable</strong> = function(){<br />return <strong>functionReturnValue</strong><br />}</em></p>
+<li>What are some of the new array methods discussed in this chapter? Why were they covered here instead of in the previous chapter (with the other array material)?</li>
+<p>Some of the new array methods introduced are <em>sort(), forEach(), every(), some(), map(), filter(),</em> and <em>reduce()</em>. The reason they were introduced in this chapter was that they are newer methods and as such not supported in older browsers. User-defined functions are needed in order for them to work properly and for the values passed to them to be valid.</p>
+<li>What information and/or values does the <em>this</em> keyword provide to a function or method?</li>
+<p>The <em>this</em> keyword provides functions and methods a context from which they are executing. This allows object methods to be called by another object's methods.</p>
+<li>What is an anonymous function? In what situations are anonymous functions commonly used?</li>
+<p>An anonymous function are functions that are created without an associate name. They are normally used when the definition of a function is assigned to a variable, or an object property, or the function is being used as a value to pass on to another function. Additionally anonymous functions are also used in the context of immediately invoked functions.</p>
+<li>Why is it possible to nest functions in JavaScript?</li>
+<p>It is possible to nest functions in Javascript because objects have methods, and in Javascript a function is a object. Therefore a nested function is a method of the outer function.</p>
+<li>What is recursion and when is it useful? What is an alternative to recursion (in some situations)?</li>
+<p>Recursion is when a function calls itself and it is useful when you need to repeat the function's statement an unknown number of times. An alternate to recursion would be the use of a for loop within the function.</p>
+</ol>

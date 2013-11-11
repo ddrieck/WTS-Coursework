@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title> Part 1 Answers </title>
+</head>
+<body>
+<center><h1> Part 1 Answers </h1></center>
+<br>
+<ul>
+<li>How do you declare a variable? </li>
+<p>A variable is declared using var <em>variableName;</em></p>
+<li> What is variable scope? </li>
+	<p>The scope determines where the variable is called, and concurrently, where it can be called from. Two main scopes exist. A variable can be called within a function, and be used only within that function, or it can be called globally, and used throughout the script.</p>
+<li> What are the rules for a variable’s name? </li>
+	<p>Variable names have several rules. First the name must start with a letter, underscore, or dollar sign. The name cannot have spaces, punctuation, or any other special characters. A variable cannot be in all caps, nor can it use one of Javascript's reserved words, such as function or var. A variable name is usually written in camel-case format, meaning the first word is always lowercase, and the second word is identified with a beginning capital letter. Ex: <em>variableName</em>. </p>
+<li> What is the assignment operator?</li>
+	<p>The assignment operator is an equal sign (=) and is used to assign a value to the declared variable.</p>
+<li> What simple types were introduced in this chapter? </li>
+	<p>The three simple types introduced are numbers, strings, and Booleans.</p>
+<li> How can you use a single quotation mark within a string? A double quotation mark? </li>
+	<p>The easiest method is to delimit the string with the opposite character. If you wish to use double quotation marks within the string sequence then define the string using single quotation marks. Ex: var <em>string</em> = 'Then he said "a string"'</p>
+	
+	<p>The opposite is true for using single quotations. Delimit the string using double quotes and add the single quotation in the string sequence.</p>
+	
+	<p>A final method involves using the escape character, backslash. Placing a backslash in front of the quotation within the string sequence will tell Javascript to ignore the quotation and just print it out as part of the string. Ex: var <em>string</em> = "Then he said \"a string\"".</p>
+<li> What does the *= operator do? How about + =? (There are two answers to this last question.) And what about + +? </li>
+	<p>The *= operator multiples a number value by another value and gives the answer. += can either add two values, if those values are numbers, or, if they strings, concatenate two values into one. The ++ operator adds an incremental value of the variable.</p>
+<li> What operator can cause bugs when used with a string and a number together? </li>
+	<p>Because the += operator can both add and concatenate, depending on whether the value is a number or string, in can cause bugs when both types are used together. </p>
+<li> What does the toFixed() method do? </li>
+	<p>The toFixed() method essentially rounds up to a decimal place that is defined in the method.</p>
+<li> What are some of the differences between Number objects and the Math object? </li>
+	<p>Once large difference between a Number object and a Math object is that the Math object does not require a variable to be assigned to it. You can use the Math object directly and because it is a global object it can be used at any time. </p>
+<li> What is an empty string? </li>
+	<p>An empty string is a string defined only by "" or ''. </p>
+<li> What does the charAt() method do? What does indexOf() do? How about lastIndexOf()? What are the arguments to the indexOf() and lastIndexOf() methods? What happens when you use negative numbers for the second argument to either method? </li>
+	<p>The charAt() method finds a character at a specific position in the string.
+	The indexOf() method looks for a specific character in the string and returns the indexed position of that character. The first argument of indexOf() is a combination of string characters that the method can search for. This can be a single character, or multiple. The second argument is an index location where the method should being it's search. This is the same with lastIndexOf(), however the second argument indicates the starting point from which the method can move backwards, not forwards like indexOf().
+	Putting a negative number into the second argument of either method will move the starting position where the search begins from the end of the string, instead of the beginning.</p>
+<li> What function should you use to pull a substring out of a string and how do you use it? </li>
+	<p>The slice() method allows you pull a substring out of a string. It uses two arguments. The first being a number, which indicates the index position where the method starts. The second, optional, argument is a number where the method ends. The method will grab the value of the string between these two values and create a substring for use.</p>
+<li> What are the various ways you can perform concatenation with strings? </li>
+	<p>You can concatenate a string using the + operator (or +=) to add strings together. You can also use the concat() method which provides the same functionality.</p>
+<li> What are escape sequences? </li>
+	<p>The escape sequences are \ to escape a character. \n is a new line, \r is a carriage return, and \\ is an actual backslash character.</p>
+<li> What are some of the ways you can convert a string to a number? </li>
+	<p>You can convert a string to a number by using the parseFloat() or parseInt() methods. You can also add a + operator to the front of a string or multiplying it by 1.</p>

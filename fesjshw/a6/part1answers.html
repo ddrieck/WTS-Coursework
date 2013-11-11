@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title> Part 1 Answers </title>
+</head>
+<body>
+<center><h1> Part 1 Answers </h1></center>
+<br>
+<ol>
+<li>What four ways of creating event listeners are detailed in this chapter? Which approach should you not use and why? What are the pros and cons of the other three approaches? </li>
+<p>	The four ways to create event handlers are inline, traditional, W3C, and IE. You should never ever use inline event handling , for fear of ridicule. There are a couple of reasons to avoid inline event handling. The main reasons are that it creates extremely messy HTML, with lots of Javascript spread throughout. You are also unable to apply progressive enhancement using this method, resulting in our third reason, which is that you are not able to standardize and accurately confirm that your page works for all users.</p>
+	
+<p>	The pros and cons for the other three methods are:<br />
+		<ul><li>Traditional event handling - The pro to using this method is that it is easy to use and works across all browsers. The downside is that you can only assign a single event to an element. Because of that it is very easy to overwrite an existing event handler, causing unwanted behavior.</li>
+		<li>W3C event handling - With W3C the code is done within Javascript and allows multiple events to happen on the same element. The downside is that it takes a more code to write the same event than in the traditional event handling and it does not work for IE versions earlier than 9.</li>
+		<li>IE event handling - The pros and cons of this method are pretty much the same thing. The IE event handling only works in IE version earlier than 9. It is very similar to W3C, so had the same advantages, but is not cross browser compatible.</li></ul>
+</p>
+<li>What method works in IE8 for registering event listeners? And in IE9? </li>
+<p>	For IE8 you will have to use the IE event handling in order to register an event. This is the <em>attachEvent()</em> method, which takes the event and function to be called as it's arguments. In IE9 we are able to use the any of the other methods, including W3C. IE9 then could use either <em>attachEvent()</em> or <em>addEventListener()</em> methods.</p>
+<li>What benefits are gained by creating a utility library, defined within a single global object? </li>
+<p>	The main benefit with a utility library is that it avoids cluttering the global namespace, which can cause problems when lots of global objects are defined.  Additionally having a utility library can make writing code a lot easier as there isn't a need to constantly retype the same functions in the different Javascript files that populate a site.</p>
+<li>What three events are triggered when a user clicks on an element? Why can it be better to listen to just the mousedown event, instead of a click? </li>
+<p>	The three events are <em>mousedown, mouseup,</em> and <em>click</em>. Since click is a combination of mousedown and mouseup it needs a very exact input. The mousedown event is a bit more flexible and will give more reliable results as users are able to move the mouse to the element while having a mousedown and still trigger the event.</p>
+<li>What are the three most important keyboard events? </li>
+<p>The three most important events are <em>keydown, keyup,</em> and <em>keypress</em>.</p>
+<li>What is the focus event? What is blur? </li>
+<p>	<em>Focus</em> and <em>blur</em> events can occur either in the browser or in forms. They are most commonly used in the context of forms. In the browser context the <em>focus</em> event is when you have multiple browser windows open and you switch, or focus, your screen on one. <em>Blur</em>, on the other hand occurs when you move away from a window.<br/>
+In the context of forms the events are almost the same. A <em>focus</em> event occurs when a cursor enters a field, and a <em>blur</em> events occurs when a cursor leaves a field and moved on to another element.</p>
+<li>When is a change event triggered? </li>
+<p>	A <em>change</em> event is triggered when an element's value changes. What is considered a change depends on the element. For checkboxes, radio buttons, and select menus and the change event occurs when the value changes. For textareas and inputs, change event occur when the element loses focus.
+</p>
+<li>Why is it important to pair event listeners and to be mindful of the events being handled?</li>
+<p>	Pairing events is important as it allows for comparable functionality across all browsers and input types that a user might use. Even if a user is not able to trigger one event the listener is still functional through it's pair. If pairing events is not done then users may be unable to use your site and therefore reduce it's accessibility.
+</p>
+<li>How do you reliably access the event that occurred in all browsers?</li>
+<p>	To reliably access the event you'll have to use event handler method and accept an argument which relates to what event has occurred. There are several different ways to write this, but to make it cross browser compatible the function would look something like:<br />
+	
+	<em>function someEventHandler( e) {    <br />    
+		 if (typeof e = = 'undefined') e = window.event; <br />
+		}</em>
+</p>
+<li>What properties are used to see what element triggered an event? What property stores the type of event that occurred?</li>
+<p>	The <em>target</em> and <em>srcElement</em> (for IE 8 and earlier) are used to see what element triggered an event. For seeing what type of event occurred we can use the <em>type</em> property, which is compatible across all browsers.
+</p>
+<li> How do you determine what key was pressed? Which events do you need to listen for in order to reliably determine the pressed key?</li>
+<p>	To determine what key is pressed you will have to find out what character was actually used. To determine the character several properties have to be used in conjunction with each other. For the majority of browsers using the <em>keyCode</em> and <em>which</em> properties will give you the character that was pressed. For IE the <em>keyCode</em> property has to be used in place of <em>which</em>. This can then be converted to a string using the <em>fromCharCode()</em> method. To make sure this is reliably used you will have to keep an eye out for the keydown and keyup events. 
+</p>
+<li>Why would you want to prevent the default event behavior? How do you do so? </li>
+<p>	You generally want to prevent the default behavior because Javascript is performing tasks and would be prevented from doing so if the normal behavior occurred. If using the traditional event handling approach you can use the <em>false</em> value in order to prevent the appropriate behavior. For the <em>addEventListener()</em> method you can use the <em>preventDefault()</em> method on the event object. Finally for IE 8 and earlier the <em>returnValue</em> property should be set to false.
+</p>
+<li>What are the two phases that events go through and in what order? Which phase is more important? </li>
+<p>	The two phases that events go through are the <em>capturing</em> phase and the <em>bubbling</em> phase, in that order. The <em>bubbling</em> phase is the most important because it is able to capture events more reliably and is compatible across all browsers.
+</p>
+<li>How does event delegation differ from event binding?</li>
+<p>With event delegation you are assigned the event handler to a parent element, allowing it to catch an events that bubble up from the children. This allows a more reliable capture and improves performance. 
+</p>
+</ol>

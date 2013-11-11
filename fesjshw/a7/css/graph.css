@@ -1,0 +1,35 @@
+DIV.graphBar {	
+	color:black;
+	font-size:smaller;
+	font-weight:bold;
+	text-align:right;
+	padding-top:5px;
+	padding-right:10px;
+	margin-top:2px;
+	margin-bottom:15px;
+}
+
+DIV.totals {
+	border-top:1px solid black;
+	font-style:italic;
+}
+
+FIELDSET {
+	width:75%;
+	background:#eeeeee;
+	margin-bottom:25px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+LEGEND {
+	font-weight:bold;
+	color:darkgreen;
+	font-size:125%;
+}
+
+SPAN {
+	color:purple;
+	font-size:90%;
+	font-family:arial, helvetica;
+}

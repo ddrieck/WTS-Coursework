@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<choices xml:lang="EN">
+	<item><label>Seattle</label><value>SEA</value><pop>620778</pop></item>
+	<item><label>Spokane</label><value>SPO</value><pop>210103</pop></item>
+	<item><label>Tacoma</label><value>TAC</value><pop>200678</pop></item>
+	<item><label>Vancouver</label><value>VAN</value><pop>164759</pop></item>
+	<item><label>Bellevue</label><value>BEL</value><pop>124798</pop></item>
+	<item><label>Kent</label><value>KEN</value><pop>120916</pop></item>
+	<item><label>Everett</label><value>EVE</value><pop>104295</pop></item>
+	<item><label>Renton</label><value>REN</value><pop>92812</pop></item>
+	<item><label>Yakima</label><value>YAK</value><pop>92512</pop></item>
+	<item><label>Federal Way</label><value>FED</value><pop>91085</pop></item>
+	<item><label>Spokane Valley</label><value>SPV</value><pop>90279</pop></item>
+	<item><label>Bellingham</label><value>BEL</value><pop>81862</pop></item>
+	<item><label>Kennewick</label><value>KEN</value><pop>76224</pop></item>
+	<item><label>Auburn</label><value>AUB</value><pop>71517</pop></item>
+	<item><label>Pasco</label><value>PAS</value><pop>63186</pop></item>
+	<item><label>Marysville</label><value>MAR</value><pop>60785</pop></item>
+	<item><label>Lakewood</label><value>LAK</value><pop>58839</pop></item>
+	<item><label>Redmond</label><value>RED</value><pop>55228</pop></item>
+	<item><label>Shoreline</label><value>SHO</value><pop>54044</pop></item>
+	<item><label>Kirkland</label><value>KIR</value><pop>49755</pop></item>
+	<item><label>Richland</label><value>RIC</value><pop>49571</pop></item>
+	<item><label>Olympia</label><value>OLY</value><pop>47266</pop></item>
+	<item><label>Sammamish</label><value>SAM</value><pop>46700</pop></item>
+	<item><label>Lacey</label><value>LAC</value><pop>43117</pop></item>
+	<item><label>Edmonds</label><value>EDM</value><pop>40215</pop></item>
+	<item><label>Bremerton</label><value>BRE</value><pop>39051</pop></item>
+	<item><label>Puyallup</label><value>PUY</value><pop>37454</pop></item>
+	<item><label>Longview</label><value>LON</value><pop>36672</pop></item>
+	<item><label>Lynnwood</label><value>LYN</value><pop>36291</pop></item>
+	<item><label>Bothell</label><value>BOT</value><pop>34055</pop></item>
+	<item><label>Burien</label><value>BUR</value><pop>33977</pop></item>
+	<item><label>Wenatchee</label><value>WEN</value><pop>32373</pop></item>
+	<item><label>Walla Walla</label><value>WAW</value><pop>32148</pop></item>
+	<item><label>Mount Vernon</label><value>MTV</value><pop>32070</pop></item>
+	<item><label>University Place</label><value>UNP</value><pop>31511</pop></item>
+	<item><label>Issaquah</label><value>ISS</value><pop>31037</pop></item>
+	<item><label>Des Moines</label><value>DES</value><pop>30258</pop></item>
+	<item><label>Pullman</label><value>PUL</value><pop>29913</pop></item>
+	<item><label>Lake Stevens</label><value>LKS</value><pop>28431</pop></item>
+	<item><label>SeaTac</label><value>STA</value><pop>27430</pop></item>
+	<item><label>Bainbridge Island</label><value>BIS</value><pop>23262</pop></item>
+	<item><label>Mercer Island</label><value>MIS</value><pop>23154</pop></item>
+	<item><label>Maple Valley</label><value>MPV</value><pop>23139</pop></item>
+	<item><label>Oak Harbor</label><value>OKH</value><pop>22239</pop></item>
+	<item><label>Kenmore</label><value>KEN</value><pop>20870</pop></item>
+	<item><label>Moses Lake</label><value>MLK</value><pop>20858</pop></item>
+	<item><label>Mukilteo</label><value>MUK</value><pop>20514</pop></item>
+	<item><label>Mountlake Terrace</label><value>MLT</value><pop>20165</pop></item>
+	<item><label>Camas</label><value>CMS</value><pop>19712</pop></item>
+	<item><label>Tukwila</label><value>TUK</value><pop>19486</pop></item>
+</choices>
+
+						

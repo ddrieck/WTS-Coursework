@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title> Part 1 Answers </title>
+</head>
+<body>
+<center><h1> Part 1 Answers </h1></center>
+<br>
+<ol>
+<li> How do you create an Ajax object? </li>
+<p>To create an Ajax object for the majority of browsers you would use the <em>XMLHttpRequest</em> object. In IE versions older than 7 you must create a new <em>ActiveXObject</em> object. </p>
+<li> What are the arguments to the <em>open()</em>?</li>
+<p>The first argument of the <em>open()</em> method is the type of request that is being sent, GET or POST. The second request is the URL of the server resource. The value <em>true</em> is the third argument, which indicates where the request is asynchronous (true) or synchronous. Finally there are an optional fourth and fifth argument, which are username and password.</p>
+<li> When should you make GET requests and when should you make POST requests?</li>
+<p>GET requests are best to fetch data, while POST requests are generally used to cause a server change or reaction, such as form submissions. </p>
+<li> Why is it critical to load an HTML page through a URL when the Javascript will be making an Ajax request?</li>
+<p>Ajax requests must be made through a server in order to work. If Javascript is not made through a URL then you will receive an error status code.</p>
+<li> What is the difference between an <em>asynchronous</em> request and a <em> synchronous</em> one?</li>
+<p>With asynchronous requests, other Javascript code can be executed, while Javascript waits for the server response to the intial request. During synchronous requests Javascript is unable to execute any other code while it waits for response from the server.</p>
+<li> What is the significance of the <em>readyState</em> property? What <em>readyState</em> value is the most important?</li>
+<p>The readyState property contains five possible values that indicate the status of the Ajax requests. They range from 0 to 4, with 0 being unsent, 1 being opened, 2 being headers received, 3 being loading, and 4 being done. The most important of these properties is 4, which indicates that the request is done and further requests can be made. </p>
+<li>What two properties should you check to confirm that it's time to handle the server response (and what values should those properties have)?</li>
+<p>The two properties you should check are the <em>readyState</em> property and the <em>status</em> property. The <em>readyState</em> property should have a value of 4 and the <em>status</em> property requires that the return code have either a status of 200 or less than 300. A status more than 300 indicates an error.</p>
+<li>What method actually begins the Ajax request?</li>
+<p>The <em>send()</em> actually begins the Ajax request that has been opened in the previous <em>open()</em> method.</p>
+<li>How do you send data as part of the request? Note: There are multiple answers.</li>
+<p>There are several ways to send data with your request. The first way is to append it to the URL request. This URL should be structured with <em>name=value</em> and multiple pairs separated by the ampersand(&) symbol. The other option is to provide the data as a singular argument in the <em>send()</em> method. A final way to send data would be to create a <em>FormData</em> object and send the data with the <em>append</em> method.</p>
+<li>What Ajax debugging techniques should you deploy when you have problems with Ajax?</li>
+<p>The first debugging method is to test the server side script to 
+confirm what is actually being sent to Javascript. The second 
+technique would be to use the <em>network monitor</em> resource of a browser debugger. The network monitor is able to show requests being made and data being sent back and forth. A final step to help catch problems is to disable caching in the browser so that you are always seeing fresh data.</p>
+<li>What is <em>caching</em> and how does it affect Ajax processes?</li>
+<p>Caching is the browser's default tendency to download data and hold it for future requests. This can speed up performance as the browser does not need to redownload elements everytime it visits a page. This can affect Ajax processes because server-side changes will not be immediately shown as the browser does not attempt to redownload the data. </p>
+<li>How do you handle XML data using Javascript? How do you handle JSON data?</li>
+<p>In order to process XML data the <em>XMLHttpRequest</em> object needs to be used in order to fetch the XML. When receiving the data it is representated as a DOM tree and you can navigate it use DOM scripting methods. JSON data is processed using the <em>responseText</em> property of the Ajax object. From there it must parsed as Javascript code. This can be done using a JSON library and the JSON.parse method.</p>
+<li>How do you write a PHP script that just returns plain text? WHat about XML? JSON?</li>
+<p>To write a PHP script that returns plain text you simply have the script echo whatever text you want sent. For XML you would first indicate the <em>Content-Type</em> as text/xml and then echo the actual XML document back to Javascript. For JSON you will need to declare the appropriate <em>Content-Type</em> using application/json. From there you are able to echo the data, though it is advisable to have the syntax of the JSON be written into an array first.</p>
+<li>How do you repeatdly perform an AJAX request, every minute or some other interval? How do you delay performing an Ajax request?</li>
+<p>To repeatedly perform an AJAX request you would put the calling function as an argument of the <em>setInterval</em> method. From there you would set the interval that the function is called in milliseconds, with 60,000 milliseconds being one minute. In much the same way you would delay a request by using the <em>setTimeout</em> method and indicating, in milliseconds, how long to wait until the request should be sent.</p>
+</ol>

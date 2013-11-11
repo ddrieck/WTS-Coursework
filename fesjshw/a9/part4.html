@@ -1,0 +1,32 @@
+ 
+<html> 
+<head> 
+	<title>Line Graph Application</title> 
+ 
+	<link rel="stylesheet" type="text/css" href="css/graph.css" /> 
+	<link rel="stylesheet" type="text/css" href="css/form.css" /> 
+	<script src="js/part4.js" type="text/javascript"></script> 
+ 
+ 
+</head> 
+ 
+<body> 
+ <form action="#" method="post" id="theForm">
+	<fieldset><legend>Add Data to a Graph</legend>
+	<div><label for="graph">Graph</label><select name="graph" id="graph">
+		<option value="widget">Widget Production</option>
+		<option value="icecream">Ice Cream Consumption</option>
+		<option value="muppet">Muppet Airtime</option>
+	</select></div>
+	<div><label id="datalabel" for="data">Please enter 4 values for the widget.</label><input type="number" name="data" id="data" required></div>
+	<input type="submit" value="Add Data Point" id="submit">
+	</fieldset>
+	<div id="dataoutput"></div>
+</form><br />
+	
+<div id="buttonCode"><input type="button" id="graphsubmit" value=" Click To Show to Graph " /></div>
+	
+</body> 
+ 
+</html> 
+ 

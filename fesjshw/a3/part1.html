@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Should I buy this book?</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- names.html -->
+    <form action="" method="post" id="theForm">
+        <fieldset>
+		<center><p>Please fill out the options to see if we have the book.
+			<br />(The complex logic solution for part one is included at the top of the javascript file)</p></center>
+			<div><label for="price">Price</label><input type="number" name="price" id="price" required></div>
+			<div><label for="pubYear">Publication Year<label><input type="number" name="pubYear" id="pubYear" required></div>
+			<div><label for="binding">Binding</label> <select name="binding" id="binding" required>
+			    <option value="Hardcover">Hardcover</option>
+			    <option value="Paperback">Paperback</option>
+			</select></div>
+			<div><label for="NYTBestSeller">NY Times Best Seller?</label> <select name="NYTBestSeller" id="NYTBestSeller" required>
+			    <option value="true">Yes</option>
+			    <option value="false">No</option>
+			</select></div>
+			<div><label for="title">Series Title (hint: I heard The Food Network is a great series.)</lable><input type="text" name="title" id="title" required></div>
+			<div><label for="result">Do we have the book? </label><textarea type="text" name="result" id="result"></textarea></div>
+			<div><input type="submit" value="Submit" id="submit"></div>
+        </fieldset>
+    </form>
+    <script src="js/part1.js"></script>
+</body>
+</html>
